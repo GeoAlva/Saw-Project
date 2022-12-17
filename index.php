@@ -14,14 +14,15 @@ session_start();
     <?php
     include "common/navbar.php";
     ?>
-    <div ></div>
+
     
     
     <footer class="foot">
  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
- Quis error sapiente adipisci blanditiis deserunt, 
+ Quis error sapiente adipisci blanditiis deserunt,
  officia aperiam quam voluptas eveniet ducimus nostrum facere ipsa nihil quod suscipit 
  nemo quibusdam ipsum doloribus?
+ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, doloremque! Saepe reprehenderit numquam laborum ab exercitationem veniam beatae veritatis consequatur obcaecati corrupti possimus nam consequuntur nulla perferendis illum, iste voluptatum.
 </footer>
 
 

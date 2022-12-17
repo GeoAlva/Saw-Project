@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" href="style/style.css">
 
 </head>
-<body>
+<body class="bg">
 <?php
     include "common/navbar.php"
     ?>
