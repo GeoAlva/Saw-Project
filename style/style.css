@@ -1,0 +1,174 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff;
+  margin: 0;
+  height: 100%;
+}
+
+.bg{
+  background-image: url("../images/carrefivehome.jpg");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.foot {
+  background-color: #1b51bf;
+  color:white;
+  text-align: center;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+}
+/* Header */
+
+.header img{
+  height: 50px;
+}
+
+
+/* Navbar */
+
+.searchbar{
+  float:right;
+}
+
+li input {
+
+  padding: 6px;
+  margin:7px;
+  margin-right: 0;
+  border: none;
+  font-size: 17px;
+  
+}
+
+li button {
+  float: right;
+  padding: 6px;
+  margin:7px;
+  margin-left: 0;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+
+}
+
+li button:hover{
+  background-color: #ccc;
+}
+
+
+a:link{
+    color: white;
+    text-decoration-line: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a:hover{
+    background-color: #1b2bbf;
+    text-decoration: underline;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1b51bf;
+
+  }
+  
+  li{
+    float:left
+  }
+  ul img{
+    height:2.95rem;
+    float:left
+  }
+
+  .signin{
+    float: right;
+    background-color: #004B8D;
+  }
+
+
+  /*form*/
+
+  .container{
+    position: relative;
+    right: 0;
+    width: 28em;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #1b51bf;
+    margin: 50px auto;
+    padding: 2.5em;
+}
+
+.container .form-element{
+    position: relative;
+    padding-bottom: 1em;
+}
+
+.form-input{
+    position: relative;
+    width: 100%;
+    height: 3.2em;
+    font-size: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 1em;
+    padding-top: 0.85em;
+}
+
+.floating-label{
+    position: absolute;
+    width: 100%;
+    top: 32%;
+    left: 1em;
+    color: #444;
+    font-size: 18px;
+    cursor: text;
+    transition: top 200ms ease-in, font-size 200ms ease-in;
+}   
+
+input:focus ~ .floating-label,
+.form-input:not(:placeholder-shown).form-input:not(:focus) ~ .floating-label{
+    top:0.5em;
+    font-size: 0.75rem ;
+    padding: 0 0.125em;
+}
+
+.btn{
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color:#1b2bbf;
+    color: #ffffff;
+
+}
+
+.btn:hover{
+    background-color: #0f186b;
+    transition-duration: 200ms;
+}
+
+.container a{
+    color: #ffffff;
+}
+
+
+
