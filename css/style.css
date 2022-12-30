@@ -121,13 +121,15 @@ ul {
 
   .container{
     position:relative;
-    min-width: auto;
-    max-width: 28rem;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: #1b51bf;
-    margin: 50px auto;
+    margin-left:auto;
+    margin-right: auto;
+    width: 400px;
+    display: block;
     padding: 2.5rem;
+    margin-top: 10%;
 }
 
 .container .form-element{
@@ -185,10 +187,14 @@ input:focus ~ .floating-label,
 }
 
 .container .start{
-    border-radius: 5px;
-    background-color:#1b2bbf;
-    margin-inline: 8rem;
-    padding: 1em;
+  position: relative;
+  border-radius: 5px;
+  background-color: #004B8D;
+  width: min-content;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 
@@ -196,17 +202,18 @@ footer{
   background-color: #1b2bbf;
   color: #ccc;
   display: flex;
-  padding: 15px 40px 15px 40px ;
+  padding: 15px 30px 15px 30px ;
   position: absolute;
-  width:100%;
+  width: 100%;
   border: 10px;
   bottom:0;
   left:0;
 }
 
-hr{
-  color:#ccc;
+footer hr{
+
 }
+
 
 
 

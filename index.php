@@ -23,8 +23,9 @@ session_start();
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius assumenda, aliquid harum impedit repellendus
             ut consequuntur adipisci soluta eligendi, porro autem minima eveniet dicta. Odit ipsum placeat laborum
             delectus obcaecati.</p>
-        <br>
-        <a href="#" class="start"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <br><div class="start">
+        <a href="#"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        </div>
     </div>
 
     <?php
