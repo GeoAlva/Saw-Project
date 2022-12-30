@@ -1,4 +1,4 @@
-<footer>
+<!-- <footer>
         <div>
             <h3>Progetto SAW</h3>
             <h3>A.A. 2022/2023</h3>
@@ -19,4 +19,4 @@
             </h3>
         </div>
 
-    </footer>
+    </footer> -->
