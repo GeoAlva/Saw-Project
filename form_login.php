@@ -15,7 +15,7 @@ session_start();
 <?php
     include "common/navbar.php"
     ?>
-        <form action="php/validate.php" method="post" class="container">
+        <form action="php/login.php" method="post" class="container">
         <h2>Log in</h2>
         
         <div class="form-element">
