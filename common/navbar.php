@@ -16,16 +16,15 @@
                 
             }
             else{
-                echo "<li class=\"signin\"><a href=\"signup.php\"> Sign Up</a></li>";
-                echo "<li class=\"signin\"><a href=\"login.php\"> Log In</a></li>";
+                echo "<li class=\"signin\"><a href=\"signup.php\"> Sign Up </a></li>";
+                echo "<li class=\"signin\"><a href=\"login.php\"> Log In </a></li>";
             }
             ?>
             <li class="searchbar">
                 <form action="#" method="get" >
-                    <input type="text" name="search" id="search" placeholder="Search Product...">
-                    <button type="submit" for="search">Search</button>   
+                    <input type="text" name="search" id="search" class="inputbar" placeholder="Search Product...">
+                    <button type="submit" for="search"class="srcbtn"><i class="fa-solid fa-magnifying-glass"></i></button>   
                 </form>     
             </li>
-            
         </ul>
 </div>

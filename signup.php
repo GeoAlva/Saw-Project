@@ -8,10 +8,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
-    <link rel="stylesheet" href="style/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg">
 <?php
     include "common/navbar.php"
     ?>
@@ -49,5 +49,9 @@ session_start();
         <a href="login.php"> Log in</a>
 
     </form>
+
+    <?php
+    include "common/footer.php";
+    ?>
 </body>
 </html>
