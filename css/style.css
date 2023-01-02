@@ -1,5 +1,6 @@
 html,body{
   height: 100%;
+  width: 100%;
 }
 
 body{
@@ -8,6 +9,8 @@ body{
   margin: 0;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  max-width: 100%;
 }
 
 .bg{
@@ -120,16 +123,16 @@ ul {
   /*form*/
 
   .container{
-    position:relative;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
     background-color: #1b51bf;
-    margin-left:auto;
-    margin-right: auto;
-    width: 400px;
+    min-width: 250px;
+    width:20vw;
     display: block;
     padding: 2.5rem;
-    margin-top: 2em;
+    margin:2em auto 2em auto;
 }
 
 .container .form-element{
@@ -203,11 +206,9 @@ footer{
   color: #ccc;
   display: flex;
   padding: 15px 30px 15px 30px ;
-  position: absolute;
-  width: 100%;
+  max-width: 100%;
   border: 10px;
-  bottom:0;
-  left:0;
+  margin-top: auto;
 }
 
 footer hr{
