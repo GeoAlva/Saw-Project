@@ -10,9 +10,9 @@
             <li><a href="#">Contacts</a></li> -->
             
             <?php
-            if(isset($_COOKIE["utente"])){
+            if(isset($_SESSION["login"])){
                 echo "<li class=\"signin\"><a href=\php/logout.php\"> Log Out</a></li>";
-                echo "<li class=\"signin\"><a href=\"#\"> Ciao, ".$_COOKIE["utente"]."</a></li>";
+                echo "<li class=\"signin\"><a href=\"#\"> Ciao, ".$_SESSION["firstname"]."</a></li>";
                 
             }
             else{

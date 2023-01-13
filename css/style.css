@@ -14,7 +14,7 @@ body{
 }
 
 .bg{
-  background-image: url("images/carrefivehome.jpg");
+  background-image: url("../images/carrefivehome.jpg");
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;

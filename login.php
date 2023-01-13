@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +14,7 @@ session_start();
 </head>
 
 <body>
-<?php
+    <?php
         if(!isset($_POST["submit"])){
             echo "Submit data from form";
             echo "<a href=\"form_login.php\"> Go back</a><br>";
@@ -43,18 +44,34 @@ session_start();
         include "common/dbconnection.php";
 
         try {
-            $stmt = $conn->prepare("SELECT email, pass FROM users WHERE email='".$email."' ;");
+            $stmt = $conn->prepare("SELECT * FROM users WHERE email='".$email."' ;");
             $stmt->execute();
 
             $row= $stmt->fetch();
 
 
             if($row["email"]==$email && password_verify($password,$row["pass"])){
-                setcookie("user","wobble");
+                $_SESSION["login"] = true;
+                $_SESSION["firstname"] = $row["firstname"];
+                $_SESSION["lastname"] =$row["lastname"];
+                $_SESSION["email"] = $row["email"];
+                header("refresh:0; url= index.php");
+
             }
-            else 
+            else if($row["email"]==$email && !password_verify($password,$row["pass"]))
             {
-                echo" TODO";
+                echo '<script>
+                        alert("Error: Wrong Password");
+                        </script>';
+                header("refresh:0; url= form_login.php");
+                exit;
+            }
+            else{
+                echo '<script>
+                        alert("Error: cannot find any user");
+                        </script>';
+                header("refresh:0; url= form_login.php");
+                exit;
             }
 
 
