@@ -52,6 +52,7 @@ session_start();
 
             if($row["email"]==$email && password_verify($password,$row["pass"])){
                 $_SESSION["login"] = true;
+                $_SESSION["uid"] = $row["id"];
                 $_SESSION["firstname"] = $row["firstname"];
                 $_SESSION["lastname"] =$row["lastname"];
                 $_SESSION["email"] = $row["email"];
