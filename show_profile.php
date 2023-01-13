@@ -11,19 +11,36 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg" >
+<body class="bg">
     <?php
     include "common/navbar.php";
-    if(isset($_SESSION["firstname"])){
-    echo "welcome"+$_SESSION["firstname"];
+    if(!isset($_SESSION["login"])){
+    header("location: index.php");
     }
     ?>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quasi 
-quisquam repudiandae animi vel similique ipsum laboriosam earum rem neque! Incidunt
- ullam saepe quidem pariatur? Doloribus ullam corporis obcaecati asperiores!</div>
+<form class="container" action="update_profile.php" method="post">
+<h2 class = profile>Modify Profile</h2>
+<div class="form-element">
+    <input type="text" id="firstname" name="firstname" class="form-input" value="<?php echo $_SESSION["firstname"]?>">
+    <label class="floating-label" for="firstname">First Name</label>
+</div>
+    
+<div class="form-element">
+    <input type="text" id="lastname" name="lastname" class="form-input" value="<?php echo $_SESSION["lastname"]?>" >
+    <label class="floating-label" for="lastname">Last Name</label>
+</div>
 
-    <?php
-    include "common/footer.php"
-    ?>
+<div class="form-element">
+    <input type="email" id="email" name="email" class="form-input" value="<?php echo $_SESSION["email"]?>" >
+    <label class="floating-label" for="email">Email</label>
+</div>
+
+<input type="submit" id="submit" name="submit" value="Submit" class="btn"> <br><br>
+</form>
+
+
 </body>
+<?php
+include "common/footer.php";
+?>
 </html>
