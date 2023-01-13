@@ -15,7 +15,7 @@ session_start();
 <?php
     include "common/navbar.php"
     ?>
-    <form class="container" action="php/registration.php" method="post">
+    <form class="container" action="registration.php" method="post">
 
         <h2>Sign In</h2>
 
@@ -46,7 +46,7 @@ session_start();
             
         <input type="submit" id="submit" name="submit" value="Submit" class="btn"> <br><br>
         <span> Already Registered? </span>
-        <a href="login.php"> Log in</a>
+        <a href="form_login.php"> Log in</a>
 
     </form>
 

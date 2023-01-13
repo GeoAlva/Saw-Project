@@ -15,8 +15,6 @@ session_start();
 
 <?php
 
-    //include (dirname(__DIR__)."/common/navbar.php");
-
     if(!isset($_POST["submit"])){
         echo "Please submit data from form";
         exit();;
@@ -50,13 +48,13 @@ session_start();
         }
         if(strcmp($password,$confirm)){
             echo"Passwords do not match";
-            echo "<a href=\"../signup.html\"> Go back</a><br>";
+            echo "<a href=\"form_signup.php\"> Go back</a><br>";
             exit();
         }
 
         $hash=password_hash($password,PASSWORD_DEFAULT);
 
-        include "../common/dbconnection.php";
+        include "common/dbconnection.php";
 
         try{ $stmt = $conn->prepare("INSERT INTO users (firstname,lastname,email,pass)
             VALUES (:firstname,:lastname,:email,:pass)");
@@ -79,7 +77,7 @@ session_start();
             $conn=null;
 ?>
 
-    <a href="../form_login.php">Go to login page</a>
+    <a href="form_login.php">Go to login page</a>
 </body>
 </html>
 

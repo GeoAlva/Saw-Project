@@ -16,13 +16,13 @@ session_start();
 <?php
         if(!isset($_POST["submit"])){
             echo "Submit data from form";
-            echo "<a href=\"../form_login.php\"> Go back</a><br>";
+            echo "<a href=\"form_login.php\"> Go back</a><br>";
             exit();
         }
 
         if(empty($_POST["email"])||empty($_POST["pass"])){
             echo "Check input data , some missing";	
-            echo "<a href=\"../form_login.php\"> Go back</a><br>";
+            echo "<a href=\"form_login.php\"> Go back</a><br>";
             exit();
         };
 
@@ -40,7 +40,7 @@ session_start();
             echo"password must be between 6 and 30 characters long";
             exit();
         }
-        include "../common/dbconnection.php";
+        include "common/dbconnection.php";
 
         try {
             $stmt = $conn->prepare("SELECT email, pass FROM users WHERE email='".$email."' ;");
