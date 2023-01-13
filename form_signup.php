@@ -25,22 +25,22 @@ session_start();
         </div>
             
         <div class="form-element">
-            <input type="text" id="lastname" name="lastname" class="form-input" placeholder=" " >
+            <input type="text" id="lastname" name="lastname" class="form-input" placeholder=" " required>
             <label class="floating-label" for="lastname">Last Name</label>
         </div>
 
         <div class="form-element">
-            <input type="email" id="email" name="email" class="form-input" placeholder=" " >
+            <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
             <label class="floating-label" for="email">Email</label>
         </div>
 
         <div class="form-element">
-            <input type="password" id="pass" name="pass" class="form-input" placeholder=" " >
+            <input type="password" id="pass" name="pass" class="form-input" placeholder=" " required>
             <label class="floating-label" for="pass">Password</label>
         </div>
 
         <div class="form-element">
-            <input type="password" id="confirm" name="confirm" class="form-input" placeholder=" " >
+            <input type="password" id="confirm" name="confirm" class="form-input" placeholder=" " required>
             <label class="floating-label" for="confirm">Confirm Password</label>
         </div>
             

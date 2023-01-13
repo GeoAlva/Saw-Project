@@ -12,7 +12,7 @@
             <?php
             if(isset($_SESSION["login"])){
                 echo "<li class=\"signin\"><a href=logout.php> Log Out</a></li>";
-                echo "<li class=\"signin\"><a href=\"#\"> Hi, ".$_SESSION["firstname"]."</a></li>";
+                echo "<li class=\"signin\"><a href=\"show_profile.php\"> Hi, ".$_SESSION["firstname"]."</a></li>";
                 echo "<li class=\"signin\"><a href=#><i class=\"fa-solid fa-cart-shopping\"></i></a></li>";
             }
             else{
