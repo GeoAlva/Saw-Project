@@ -1,13 +1,52 @@
+main{
+    color:#000000;
+}
+
 .shoplist{
     display: flex;
-    flex-direction: row;
+
 }
 
 .shop_elem{
     display:flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    padding: 10px;
+    margin:10px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 5px;
+    background-color:#ffffff;
+
 }
 
 .shop_elem img{
-    max-height: 20px;
+    width: 70px;
+    justify-content: center;
+}
+
+.shop_elem button{
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 10px;
+    background-color:#1b2bbf;
+    color: #ffffff;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(65, 87, 212);
+    min-width: 70vh;
+    overflow:auto;
+    width:20vw;
+    display: block;
+    padding: 2.5rem;
+    margin:2em auto 2em auto;
 }
