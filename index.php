@@ -24,7 +24,7 @@ session_start();
             ut consequuntur adipisci soluta eligendi, porro autem minima eveniet dicta. Odit ipsum placeat laborum
             delectus obcaecati.</p>
         <br><div class="start">
-        <a href="#"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="main.php"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 

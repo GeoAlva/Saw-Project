@@ -1,0 +1,13 @@
+.shoplist{
+    display: flex;
+    flex-direction: row;
+}
+
+.shop_elem{
+    display:flex;
+    flex-direction: column;
+}
+
+.shop_elem img{
+    max-height: 20px;
+}
