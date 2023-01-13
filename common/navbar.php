@@ -11,9 +11,9 @@
             
             <?php
             if(isset($_SESSION["login"])){
-                echo "<li class=\"signin\"><a href=\php/logout.php\"> Log Out</a></li>";
-                echo "<li class=\"signin\"><a href=\"#\"> Ciao, ".$_SESSION["firstname"]."</a></li>";
-                
+                echo "<li class=\"signin\"><a href=logout.php> Log Out</a></li>";
+                echo "<li class=\"signin\"><a href=\"#\"> Hi, ".$_SESSION["firstname"]."</a></li>";
+                echo "<li class=\"signin\"><a href=#><i class=\"fa-solid fa-cart-shopping\"></i></a></li>";
             }
             else{
                 echo "<li class=\"signin\"><a href=\"form_signup.php\"> Sign Up </a></li>";
