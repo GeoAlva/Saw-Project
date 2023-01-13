@@ -22,7 +22,7 @@ main{
 }
 
 .shop_elem img{
-    width: 70px;
+    width: 100  px;
     justify-content: center;
 }
 
@@ -45,7 +45,7 @@ main{
     background-color: rgb(65, 87, 212);
     min-width: 70vh;
     overflow:auto;
-    width:20vw;
+
     display: block;
     padding: 2.5rem;
     margin:2em auto 2em auto;
