@@ -28,10 +28,12 @@
                     <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
                     <h5>pasta b</h5>
                     <div>5.99$</div>   
-                    <button type="button" class="plus_button" name="plus_button">+</button>
-                    <input type="text" name="quantita" value="1">
-                    <button type="button" class="minus_button" name="minus_button">-</button>
-                    <button type="submit"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
+                    <div class="quantity_div">
+                        <button type="button" class="minus_button" name="minus_button">-</button>    
+                        <input type="text" class="quantity" name="quantita" value="1">
+                        <button type="button" class="plus_button" name="plus_button">+</button>
+                    </div>
+                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
                 </div>
                 <div class="shop_elem">
                     <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
