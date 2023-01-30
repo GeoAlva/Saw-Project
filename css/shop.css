@@ -37,6 +37,14 @@ main{
     color: #ffffff;
 }
 
+.plus_button{
+    background-color:#00ff66;
+}
+
+.minus_button{
+    background-color:#d70404;
+}
+
 .list{
     display: flex;
     justify-content: center;
