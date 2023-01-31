@@ -39,12 +39,12 @@ body{
 }
 
 .inputbar{
-  border-radius: 50px 0  0 50px !important;
+  border-radius: 50px 0  0 50px;
   padding-left: 20px;
 }
 
 .srcbtn{
-  border-radius: 0 50px 50px 0 !important;
+  border-radius: 0 50px 50px 0;
   
 }
 .srcbtn img{
@@ -116,7 +116,7 @@ ul {
 
   .signin{
     float: right;
-    background-color: #004B8D;
+    background-color: #1b51bf;
   }
 
 
