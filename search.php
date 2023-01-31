@@ -11,10 +11,11 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/shop.css">
     <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
+    <script src="js/quantitybuttons.js"></script> 
     <title>Carrefive - search</title>
 </head>
 
-<body>
+<body class="bg">
 <?php
         include "common/navbar.php";
     ?>
@@ -38,22 +39,22 @@ session_start();
                     } catch (PDOException $e) {
                         echo "Error: " . $e->getMessage();
                     }
-
+                    $i=1;
                     foreach($rows as $elem){
                         echo    "<div class='shop_elem'>";
                         $product = explode("-",$elem["name"]);
-                        //print("src='images/".$product[0]."/".$product[1].".png'");
                         echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
                         $product[1]=str_replace("_"," ",$product[1]);
                         echo        "<h5>".$product[1]."</h5>";
                         echo        "<div>".$elem["price"]."</div> ";
                         echo        '<div class="quantity_div">';
-                        echo        '<button type="button" class="minus_button" name="minus_button">-</button>';    
-                        echo        '<input type="text" class="quantity" name="quantita" value="1">';
-                        echo        '<button type="button" class="plus_button" name="plus_button">+</button>';
+                        echo        '   <button type="button" onclick="decreaseQt(\'pr'.$i.'\')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>';    
+                        echo        '   <input type="text" id="pr'.$i.'" class="quantity" name="quantita" value="1">';
+                        echo        '   <button type="button" onclick="increaseQt(\'pr'.$i.'\')" class="plus_button" name="plus_button">+</button>';
                         echo        '</div>';
                         echo        '<button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
                         echo    "</div>";
+                        $i++;
                     }
                     $conn = null;
                 ?>

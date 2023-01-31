@@ -4,7 +4,9 @@ main{
 
 .shoplist{
     display: flex;
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:50px
 }
 
 .shop_elem{
@@ -18,11 +20,12 @@ main{
     border-color: #ccc;
     border-radius: 5px;
     background-color:#ffffff;
-
+    max-width: 200px;
 }
 
 .shop_elem img{
-    width: 100px;
+    max-width: 120px;
+    max-height: 120px;
     justify-content: center;
 }
 
@@ -98,7 +101,6 @@ background-color: rgb(11, 0, 216);
     border-radius: 5px;
     background-color: rgb(65, 87, 212);
     min-width: 70vh;
-    overflow:auto;
     display: block;
     padding: 2.5rem;
     margin:2em auto 2em auto;

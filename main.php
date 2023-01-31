@@ -11,155 +11,163 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/shop.css">
     <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
+    <script src="js/quantitybuttons.js"></script> 
 </head>
-<body>
+<body class="bg">
     <?php
         include "common/navbar.php";
     ?>
 
     <main>
         <div class="list">
-            <h3>i dunTODO</h3>
+            <h3>Pasta Time</h3>
             <div class="shoplist">
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta a</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr1')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>    
-                        <input type="text" id="pr1" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr1')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta b</h5>
-                    <div>5.99$</div>   
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr2')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>  
-                        <input type="text" id="pr2" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr2')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta c</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr3')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>   
-                        <input type="text" id="pr3" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr3')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta d</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr4')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>    
-                        <input type="text" id="pr4" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr4')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
+            <?php
+                    include("common/dbconnection.php");
+                    
+                    try {
+                        $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '%Pasta%'");
+                        $stmt->execute();
+                        $rows= $stmt->fetchAll();
+                        if(count($rows)==0)
+                        echo "<p> No product found </p>";
+                        
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
+                    }
+                    $i=1;
+                    foreach($rows as $elem){
+                        echo    "<div class='shop_elem'>";
+                        $product = explode("-",$elem["name"]);
+                        echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
+                        $product[1]=str_replace("_"," ",$product[1]);
+                        echo        "<h5>".$product[1]."</h5>";
+                        echo        "<div>".$elem["price"]."</div> ";
+                        echo        '<div class="quantity_div">';
+                        echo        '   <button type="button" onclick="decreaseQt(\'pr'.$i.'\')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>';    
+                        echo        '   <input type="text" id="pr'.$i.'" class="quantity" name="quantita" value="1">';
+                        echo        '   <button type="button" onclick="increaseQt(\'pr'.$i.'\')" class="plus_button" name="plus_button">+</button>';
+                        echo        '</div>';
+                        echo        '<button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo    "</div>";
+                        $i++;
+                    }
+                    $conn = null;
+                ?>
             </div>
         </div>
 
         <div class="list">
-            <h3>i dunTODO</h3>
+            <h3>Condimenti</h3>
             <div class="shoplist">
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta a</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr5')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>  
-                        <input type="text" id="pr5" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr5')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta b</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr6')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>   
-                        <input type="text" id="pr6" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr6')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta c</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr7')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>   
-                        <input type="text" id="pr7" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr7')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta d</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr8')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>    
-                        <input type="text" id="pr8" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr8')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta d</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr9')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>   
-                        <input type="text" id="pr9" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr9')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta d</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr10')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>    
-                        <input type="text" id="pr10" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr10')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta d</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr11')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>    
-                        <input type="text" id="pr11" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr11')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
-                <div class="shop_elem">
-                    <img src="images/61gYYxGLDfL._AC_SX679_.jpg" alt="pasta">
-                    <h5>pasta d</h5>
-                    <div>5.99$</div> 
-                    <div class="quantity_div">
-                        <button type="button" onclick="decreaseQt('pr12')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>   
-                        <input type="text" id="pr12" class="quantity" name="quantita" value="1">
-                        <button type="button" onclick="increaseQt('pr12')" class="plus_button" name="plus_button">+</button>
-                    </div>
-                    <button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>
-                </div>
+            <?php
+                    include("common/dbconnection.php");
+                    
+                    try {
+                        $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '%Condimenti%'");
+                        $stmt->execute();
+                        $rows= $stmt->fetchAll();
+                        if(count($rows)==0)
+                        echo "<p> No product found </p>";
+                        
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
+                    }
+                    
+                    foreach($rows as $elem){
+                        echo    "<div class='shop_elem'>";
+                        $product = explode("-",$elem["name"]);
+                        echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
+                        $product[1]=str_replace("_"," ",$product[1]);
+                        echo        "<h5>".$product[1]."</h5>";
+                        echo        "<div>".$elem["price"]."</div> ";
+                        echo        '<div class="quantity_div">';
+                        echo        '   <button type="button" onclick="decreaseQt(\'pr'.$i.'\')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>';    
+                        echo        '   <input type="text" id="pr'.$i.'" class="quantity" name="quantita" value="1">';
+                        echo        '   <button type="button" onclick="increaseQt(\'pr'.$i.'\')" class="plus_button" name="plus_button">+</button>';
+                        echo        '</div>';
+                        echo        '<button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo    "</div>";
+                        $i++;
+                    }
+                    $conn = null;
+                ?>
+            </div>
+        </div>
 
+        <div class="list">
+            <h3>Animali</h3>
+            <div class="shoplist">
+            <?php
+                    include("common/dbconnection.php");
+                    
+                    try {
+                        $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '%Animali%'");
+                        $stmt->execute();
+                        $rows= $stmt->fetchAll();
+                        if(count($rows)==0)
+                        echo "<p> No product found </p>";
+                        
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
+                    }
+                    
+                    foreach($rows as $elem){
+                        echo    "<div class='shop_elem'>";
+                        $product = explode("-",$elem["name"]);
+                        echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
+                        $product[1]=str_replace("_"," ",$product[1]);
+                        echo        "<h5>".$product[1]."</h5>";
+                        echo        "<div>".$elem["price"]."</div> ";
+                        echo        '<div class="quantity_div">';
+                        echo        '   <button type="button" onclick="decreaseQt(\'pr'.$i.'\')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>';    
+                        echo        '   <input type="text" id="pr'.$i.'" class="quantity" name="quantita" value="1">';
+                        echo        '   <button type="button" onclick="increaseQt(\'pr'.$i.'\')" class="plus_button" name="plus_button">+</button>';
+                        echo        '</div>';
+                        echo        '<button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo    "</div>";
+                        $i++;
+                    }
+                    $conn = null;
+                ?>
+            </div>
+        </div>
+
+        <div class="list">
+            <h3>Pulizia</h3>
+            <div class="shoplist">
+            <?php
+                    include("common/dbconnection.php");
+                    
+                    try {
+                        $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '%Pulizia%'");
+                        $stmt->execute();   
+                        $rows= $stmt->fetchAll();
+                        if(count($rows)==0)
+                        echo "<p> No product found </p>";
+                        
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
+                    }
+                    
+                    foreach($rows as $elem){
+                        echo    "<div class='shop_elem'>";
+                        $product = explode("-",$elem["name"]);
+                        echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
+                        $product[1]=str_replace("_"," ",$product[1]);
+                        echo        "<h5>".$product[1]."</h5>";
+                        echo        "<div>".$elem["price"]."</div> ";
+                        echo        '<div class="quantity_div">';
+                        echo        '   <button type="button" onclick="decreaseQt(\'pr'.$i.'\')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>';    
+                        echo        '   <input type="text" id="pr'.$i.'" class="quantity" name="quantita" value="1">';
+                        echo        '   <button type="button" onclick="increaseQt(\'pr'.$i.'\')" class="plus_button" name="plus_button">+</button>';
+                        echo        '</div>';
+                        echo        '<button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo    "</div>";
+                        $i++;
+                    }
+                    $conn = null;
+                ?>
             </div>
         </div>
     </main>
@@ -168,21 +176,6 @@ session_start();
         include "common/footer.php";
     ?>
 
-<script>
-    function increaseQt(id){
-    var elem = document.getElementById(id);
-    var input = elem.value;
-    if(input < 1) elem.value = 1;
-    input < 99 ?  elem.value = Number(input)+1 : elem.value = 99;
-    };
 
-    function decreaseQt(id){
-    var elem = document.getElementById(id);
-    var input = elem.value;
-    if(input > 99) elem.value = 99;
-    else
-        input > 1 ?  elem.value = Number(input)-1 : elem.value = 1;
-    };
-</script>
 </body>
 </html>
