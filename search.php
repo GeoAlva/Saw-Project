@@ -52,7 +52,7 @@ session_start();
                         echo        '   <input type="text" id="pr'.$i.'" class="quantity" name="quantita" value="1">';
                         echo        '   <button type="button" onclick="increaseQt(\'pr'.$i.'\')" class="plus_button" name="plus_button">+</button>';
                         echo        '</div>';
-                        echo        '<button type="submit" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo        '<button type="button" id="addCart"  class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
                         echo    "</div>";
                         $i++;
                     }
