@@ -39,6 +39,12 @@ main{
     background-color:#1b2bbf;
     color: #ffffff;
 }
+.cart_button:hover{
+    background-color: rgb(1, 10, 185);    
+}
+.cart_button:active{
+background-color: rgb(11, 0, 216);   
+}
 
 .shop_elem .quantity_div{
     display: flex;
