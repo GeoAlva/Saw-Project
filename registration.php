@@ -8,11 +8,12 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
     <title>Document</title>
 </head>
 <body>
-
+<main>
 <?php
 
     if(!isset($_POST["submit"])){
@@ -78,6 +79,7 @@ session_start();
 ?>
 
     <a href="form_login.php">Go to login page</a>
+    <main>
 </body>
 </html>
 

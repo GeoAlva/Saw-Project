@@ -56,7 +56,7 @@ session_start();
                 $_SESSION["firstname"] = $row["firstname"];
                 $_SESSION["lastname"] =$row["lastname"];
                 $_SESSION["email"] = $row["email"];
-                header("refresh:0; url= index.php");
+                header("refresh:0; url= main.php");
 
             }
             else if($row["email"]==$email && !password_verify($password,$row["pass"]))

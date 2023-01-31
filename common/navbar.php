@@ -2,7 +2,7 @@
 
 <div class="navbar">
         <ul>
-            <a href="index.php"><img src="images/carrefive.png" alt="carrefive logo"></a>
+            <a href="main.php"><img src="images/carrefive.png" alt="carrefive logo"></a>
             <li><a href="#">Services</a></li>
             <li><a href="#">Team</a></li>
             <!-- <li><a href="#">Case history</a></li>
@@ -21,7 +21,7 @@
             }
             ?>
             <li class="searchbar">
-                <form action="#" method="get" >
+                <form action="search.php" method="get" >
                     <input type="text" name="search" id="search" class="inputbar" placeholder="Search Product...">
                     <button type="submit" for="search"class="srcbtn"><i class="fa-solid fa-magnifying-glass"></i></button>   
                 </form>     
