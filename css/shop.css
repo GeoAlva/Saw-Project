@@ -63,9 +63,15 @@ main{
     margin:10px;
     margin-right: 0px;
 }
+.plus_button:hover{
+        background-color: rgb(47, 148, 0);    
+}
+.plus_button:active{
+    background-color: rgb(59, 186, 0);    
+}
 
 .quantity_div .minus_button{
-    background-color:#d70404;
+    background-color:#ff0202;
     width: 100%;
     min-height: 20px;
     border-radius: 5px;
@@ -73,6 +79,13 @@ main{
     outline: none;
     margin: 10px;
     margin-left: 0px;
+}
+
+.minus_button:hover{
+    background-color: rgb(154, 0, 0);    
+}
+.minus_button:active{
+    background-color: rgb(200, 0, 0);    
 }
 
 .list{
