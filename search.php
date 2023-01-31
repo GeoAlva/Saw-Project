@@ -53,7 +53,7 @@ session_start();
                         echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="1">';
                         echo        '   <button type="button" onclick="increaseQt(\''.$elem["name"].'\')" class="plus_button" name="plus_button">+</button>';
                         echo        '</div>';
-                        echo        '<button type="submit" onclick="addtocart(\''.$elem["name"].'\')" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo        '<button type="submit" id="addCart" onclick="addtocart(\''.$elem["name"].'\')" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
                         echo    "</div>";
                         $i++;
                     }
