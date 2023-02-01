@@ -13,7 +13,7 @@
             if(isset($_SESSION["login"])){
                 echo "<li class=\"signin\"><a href=logout.php> Log Out</a></li>";
                 echo "<li class=\"signin\"><a href=\"show_profile.php\"> Hi, ".$_SESSION["firstname"]."</a></li>";
-                echo "<li class=\"signin\"><a href=cart.php><i class=\"fa-solid fa-cart-shopping\"></i></a></li>";
+                echo "<li class=\"signin\"><a href=cart.php onclick='carttocookie()' ><i class=\"fa-solid fa-cart-shopping\"></i></a></li>";
             }
             else{
                 echo "<li class=\"signin\"><a href=\"form_signup.php\"> Sign Up </a></li>";

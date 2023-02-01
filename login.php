@@ -56,6 +56,9 @@ session_start();
                 $_SESSION["firstname"] = $row["firstname"];
                 $_SESSION["lastname"] =$row["lastname"];
                 $_SESSION["email"] = $row["email"];
+                
+                setcookie('cart','',time()+3600,'/');
+
                 header("refresh:0; url= main.php");
 
             }
