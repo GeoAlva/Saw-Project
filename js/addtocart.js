@@ -16,7 +16,7 @@ function addtocart(id) {
         alert("added to cart " + quantity + "x of product " + product[1]);
     }
     let cartItem = {
-        title: product[1],
+        title: id,
         qty: quantity,
     }
     let size=Object.keys(cart).length
@@ -28,9 +28,15 @@ function addtocart(id) {
 function carttocookie() {
     let cartcookie='';
     for (let i = 0; i < Object.keys(cart).length; i++) {
-        cartcookie=cartcookie+'('+cart[i].title+':'+cart[i].qty+')';
+        cartcookie=cartcookie+cart[i].title+','+cart[i].qty+' ';
     }
     document.cookie = "cart="+cartcookie;
 
     console.log(cartcookie)
+}
+
+function purchase(){
+    let cart = {};
+    localStorage.setItem("cart",JSON.stringify(cart))
+    document.cookie="cart= "
 }

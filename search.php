@@ -12,12 +12,12 @@ session_start();
     <link rel="stylesheet" href="css/shop.css">
     <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
     <script src="js/quantitybuttons.js"></script>
-    <script src="js/addtocart.js"></script>  
+    <script src="js/addtocart.js"></script>
     <title>Carrefive - search</title>
 </head>
 
 <body class="bg">
-<?php
+    <?php
         include "common/navbar.php";
     ?>
     <main>
@@ -64,7 +64,7 @@ session_start();
                 ?>
             </div>
         </div>
-    <main>
+        <main>
 </body>
 
 </html>
