@@ -56,7 +56,6 @@ session_start();
                         echo    "</div>";
                         $i++;
                     }
-                    $conn = null;
                 ?>
             </div>
         </div>
@@ -65,8 +64,6 @@ session_start();
             <h3>Condiments</h3>
             <div class="shoplist">
             <?php
-                    include("common/dbconnection.php");
-                    
                     try {
                         $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '%Condimenti%'");
                         $stmt->execute();
@@ -97,7 +94,6 @@ session_start();
                         echo    "</div>";
                         $i++;
                     }
-                    $conn = null;
                 ?>
             </div>
         </div>
@@ -105,9 +101,7 @@ session_start();
         <div class="list">
             <h3>Animals</h3>
             <div class="shoplist">
-            <?php
-                    include("common/dbconnection.php");
-                    
+            <?php        
                     try {
                         $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '%Animali%'");
                         $stmt->execute();
@@ -138,7 +132,6 @@ session_start();
                         echo    "</div>";
                         $i++;
                     }
-                    $conn = null;
                 ?>
             </div>
         </div>
@@ -147,8 +140,6 @@ session_start();
             <h3>Cleaning</h3>
             <div class="shoplist">
             <?php
-                    include("common/dbconnection.php");
-                    
                     try {
                         $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '%Pulizia%'");
                         $stmt->execute();   
@@ -159,7 +150,6 @@ session_start();
                     } catch (PDOException $e) {
                         echo "Error: " . $e->getMessage();
                     }
-                    
                     foreach($rows as $elem){
                         echo    "<div class='shop_elem'>";
                         $product = explode("-",$elem["name"]);
