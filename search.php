@@ -49,11 +49,14 @@ session_start();
                         echo        "<h5>".$product[1]."</h5>";
                         echo        "<div>".$elem["price"]."</div> ";
                         echo        '<div class="quantity_div">';
-                        echo        '   <button type="button" onclick="decreaseQt(\''.$elem["name"].'\')" class="minus_button" pattern="[1-9][0-9]?" name="minus_button">-</button>';    
+                        echo        '   <button type="button" onclick="decreaseQt(\''.$elem["name"].'\')" class="minus_button" name="minus_button">-</button>';    
                         echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="1">';
                         echo        '   <button type="button" onclick="increaseQt(\''.$elem["name"].'\')" class="plus_button" name="plus_button">+</button>';
                         echo        '</div>';
-                        echo        '<button type="submit" id="addCart" onclick="addtocart(\''.$elem["name"].'\')" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                    if(!isset($_SESSION["login"]))
+                        echo        '<button type ="button" onclick="location.href=\'form_login.php\'" class="cart_button" ><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                    else
+                        echo        '<button type="submit" onclick="addtocart(\''.$elem["name"].'\')" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
                         echo    "</div>";
                         $i++;
                     }
