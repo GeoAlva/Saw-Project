@@ -36,6 +36,7 @@ session_start();
                         }
 
             include("common/dbconnection.php");
+                $totale=0;
                     $cart=explode(" ",$_COOKIE["cart"]);
                     foreach($cart as $elem){
                         $item=explode(",",$elem);
@@ -50,28 +51,34 @@ session_start();
                             echo "Error: " . $e->getMessage();
                         }
                     
-
+                    
                     foreach($rows as $elem){
+                        $totsingolo=$elem["price"]*100*$quantity;
+                        $totale+=$totsingolo;
                         echo    "<div class='shop_elem'>";
                         $product = explode("-",$elem["name"]);
                         echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
                         $product[1]=str_replace("_"," ",$product[1]);
                         echo        "<h5>".$product[1]."</h5>";
-                        echo        "<div>".$elem["price"]."</div> ";
+                        echo        "<div>".$elem["price"]."€</div> ";
+                        echo        "<div>tot: ".($totsingolo/100)."€</div> ";
                         echo        '<div class="quantity_div">';  
-                        echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="'.$quantity.'">';
+                        echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="'.$quantity.'" readonly>';
                         echo        '</div>';
                     if(!isset($_SESSION["login"]))
                         echo        '<button type ="button" onclick="location.href=\'form_login.php\'" class="cart_button" ><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
                     else
-                        echo        '<button type="submit" onclick="addtocart(\''.$elem["name"].'\')" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo        '<button type="submit" onclick="" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
                         echo    "</div>";
                     }
                     }
 
                     ?>
 
-                    <button onclick="window.location.href='purchase.php'">Completa l'acquisto</button></a>
+                    <button onclick="window.location.href='purchase.php'"><div>Complete purchase</div>
+                <?php echo"<div>tot: ".($totale/100)."€</div>"; 
+                ?>
+                </button>
             </div>
         </div>
     </main>
