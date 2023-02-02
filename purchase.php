@@ -64,7 +64,7 @@ session_start();
     <main>
         <div class="list">
             <h3>Purchase complete, feel free to <a href="evaluate.php">evaluate</a> our products :)</h3>
-            <form action="#" method="get">
+            <form action="evaluate.php" method="get">
             <div class="shoplist">
                 <?php
                     
@@ -88,7 +88,7 @@ session_start();
                             echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
                             $product[1]=str_replace("_"," ",$product[1]);
                             echo        "<h5>".$product[1]."</h5>";
-                            echo    '<select id="'.$elem["name"].' name="rating">';
+                            echo    '<select id="rating" name="'.$elem["name"].'">';
                             echo    '<option value="1">1</option>';
                             echo    '<option value="2">2</option>';
                             echo    '<option value="3">3</option>';

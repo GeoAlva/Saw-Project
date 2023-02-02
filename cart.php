@@ -69,7 +69,6 @@ session_start();
                     }
                     }
 
-                    
                     ?>
 
                     <button onclick="window.location.href='purchase.php'">Completa l'acquisto</button></a>
