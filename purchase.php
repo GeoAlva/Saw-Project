@@ -15,6 +15,7 @@ session_start();
     <script src="js/addtocart.js"></script>
     <title>Purchase</title>
 </head>
+
 <body class="bg">
     <?php
         include "common/navbar.php";
@@ -57,18 +58,56 @@ session_start();
                     echo "Error: " . $e->getMessage();
                 }
         }
-    $conn = null;
+
     }
 ?>
     <main>
-    <div class="list">
-    <h3>Purchase complete, feel free to <a href="evaluate.php">evaluate</a> our products :)</h3>
-    <div class="shoplist">
-    
-    </div>
-    </div>
+        <div class="list">
+            <h3>Purchase complete, feel free to <a href="evaluate.php">evaluate</a> our products :)</h3>
+            <form action="#" method="get">
+            <div class="shoplist">
+                <?php
+                    
+                    
+                    foreach($cart as $elem){
+                        $item=explode(",",$elem);
+                        $product = $item[0];
+                        $quantity = $item[1];
+                        try {
+                            $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE '$product'");
+                            $stmt->execute();
+                            $rows= $stmt->fetchAll();
+                        } catch (PDOException $e) {
+                            echo "Error: " . $e->getMessage();
+                        }
+                        
+                        foreach($rows as $elem){
+                            
+                            echo    "<div class='shop_elem'>";
+                            $product = explode("-",$elem["name"]);
+                            echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
+                            $product[1]=str_replace("_"," ",$product[1]);
+                            echo        "<h5>".$product[1]."</h5>";
+                            echo    '<select id="'.$elem["name"].' name="rating">';
+                            echo    '<option value="1">1</option>';
+                            echo    '<option value="2">2</option>';
+                            echo    '<option value="3">3</option>';
+                            echo    '<option value="4">4</option>';
+                            echo    '<option value="5">5</option>';
+                            echo    '</select>';
+                            echo    '</div>';
+
+                           }
+                        
+                        }
+                ?>
+                <button type="submit">Conferma</button>
+            </form>
+            </div>
+        </div>
     </main>
 
 
 </body>
+
 </html>
