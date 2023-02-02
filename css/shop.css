@@ -6,7 +6,8 @@ main{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin:50px
+    margin:1vw;
+    max-width: 100%;
 }
 
 .shop_elem{

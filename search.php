@@ -47,7 +47,7 @@ session_start();
                         echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
                         $product[1]=str_replace("_"," ",$product[1]);
                         echo        "<h5>".$product[1]."</h5>";
-                        echo        "<div>".$elem["price"]."</div> ";
+                        echo        "<div>".$elem["price"]."€</div> ";
                         echo        '<div class="quantity_div">';
                         echo        '   <button type="button" onclick="decreaseQt(\''.$elem["name"].'\')" class="minus_button" name="minus_button">-</button>';    
                         echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="1">';
