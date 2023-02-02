@@ -59,7 +59,7 @@ session_start();
                         echo        "<h5>".$product[1]."</h5>";
                         echo        "<div>".$elem["price"]."</div> ";
                         echo        '<div class="quantity_div">';  
-                        echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="'.$quantity.'">';
+                        echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="'.$quantity.'" readonly>';
                         echo        '</div>';
                     if(!isset($_SESSION["login"]))
                         echo        '<button type ="button" onclick="location.href=\'form_login.php\'" class="cart_button" ><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
