@@ -30,7 +30,7 @@ session_start();
             <h3>Cart</h3>
             <div class="shoplist">
                 <?php
-                        if(!isset($_COOKIE)){
+                        if(!isset($_COOKIE["cart"])||$_COOKIE["cart"]==null){
                             echo "<h4>Empty cart<h4>";
                             die();
                         }
@@ -49,8 +49,8 @@ session_start();
                         } catch (PDOException $e) {
                             echo "Error: " . $e->getMessage();
                         }
+                    
 
-                        $i=1;
                     foreach($rows as $elem){
                         echo    "<div class='shop_elem'>";
                         $product = explode("-",$elem["name"]);
@@ -66,7 +66,6 @@ session_start();
                     else
                         echo        '<button type="submit" onclick="addtocart(\''.$elem["name"].'\')" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
                         echo    "</div>";
-                        $i++;
                     }
                     }
 
