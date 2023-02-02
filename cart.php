@@ -72,7 +72,7 @@ session_start();
                     
                     ?>
 
-                    <button onclick="purchase()">Completa l'acquisto</button>
+                    <a href="purchase.php"><button onclick="purchase()">Completa l'acquisto</button></a>
             </div>
         </div>
     </main>
