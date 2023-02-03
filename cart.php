@@ -93,10 +93,7 @@ session_start();
                         echo        '<div class="quantity_div">';  
                         echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="'.$quantity.'" readonly>';
                         echo        '</div>';
-                    if(!isset($_SESSION["login"]))
-                        echo        '<button type ="button" onclick="location.href=\'form_login.php\'" class="cart_button" ><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
-                    else
-                        echo        '<button type="submit" onclick="" class="cart_button"><i class="fa-sharp fa-solid fa-cart-plus"></i></button>';
+                        echo        '<button type="submit" onclick="" class="cart_button cart_delete"><i class="fa-solid fa-xmark"></i></button>';
                         echo    "</div>";
                     }
                     }
