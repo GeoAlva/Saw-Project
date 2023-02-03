@@ -47,3 +47,10 @@ function purchase() {
     document.cookie = "cart="
     location.reload();
 }
+
+
+function deletecart(){
+    let cart={};
+    document.cookie = "cart="
+    window.localStorage.removeItem("cart");
+}

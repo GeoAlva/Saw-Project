@@ -8,5 +8,7 @@
 </head>
 <body>
     wololo
+
+    <a href="main.php"> go home</a>
 </body>
 </html>

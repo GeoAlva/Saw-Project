@@ -11,22 +11,31 @@ session_start();
 </head>
 <body>
     <?php
-    include("common/dbconnection.php");
+
+if(!isset($_SESSION["login"])){
+    header("refresh:0;url=form_login.php");
+}
+if(!isset($_COOKIE["cart"])||$_COOKIE["cart"]==null){
+    echo "<h4>Empty cart<h4>";
+    die();
+}
+
+include("common/dbconnection.php");
     $cart=explode(" ",$_COOKIE["cart"]);
-    print_r($_GET);
         foreach($cart as $elem){
             $product=explode(",",$elem);
             try {
-                $stmt = $conn->prepare("INSERT INTO `reviews`(`userid`, `product`, `rating`) VALUES (:user,:product,:rating)");
+                $stmt = $conn->prepare("INSERT INTO purchases(iduser, product,quantity, rating) VALUES (:user,:product,:quantity,:rating)");
                 $stmt->bindParam(":user",$_SESSION["uid"]);
                 $stmt->bindParam(":product",$product[0]);
+                $stmt->bindParam(":quantity",$product[1]);
                 $stmt->bindParam(":rating",$_GET[$product[0]]);
                 $stmt->execute();
             } catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
             header("refresh:0;url=confirm.php");
-               }
+               }              
     ?>
 </body>
 </html>
