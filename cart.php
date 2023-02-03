@@ -62,7 +62,7 @@ session_start();
                         echo        "<h5>".$product[1]."</h5>";
                         
                         try {
-                            $revstmt = $conn->prepare("SELECT * FROM reviews WHERE product LIKE :product");
+                            $revstmt = $conn->prepare("SELECT * FROM purchases WHERE product LIKE :product");
                             $revstmt->bindParam(":product",$elem["name"]);
                             $revstmt->execute();
                             $reviews= $revstmt->fetchAll();

@@ -19,47 +19,7 @@ session_start();
 <body class="bg">
     <?php
         include "common/navbar.php";
-
-        if(!isset($_SESSION["login"])){
-            header("refresh:0;url=form_login.php");
-        }
-        if(!isset($_COOKIE["cart"])||$_COOKIE["cart"]==null){
-            echo "<h4>Empty cart<h4>";
-            die();
-        }
-
-        include("common/dbconnection.php");
-        try {
-            $stmt = $conn->prepare("SELECT id FROM users WHERE email=:email");
-            $stmt->bindParam(":email",$_SESSION["email"]);
-            $stmt->execute();
-            $rows= $stmt->fetchAll();
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-
-        foreach($rows as $elem){
-        $iduser = $elem["id"];
-        $cart=explode(" ",$_COOKIE["cart"]);
-        foreach($cart as $elem){
-            $item=explode(",",$elem);
-            $product = $item[0];
-            $quantity = $item[1];
-        
-            try{ $stmt = $conn->prepare("INSERT INTO purchases (iduser,product,quantity)
-                VALUES (:iduser,:product,:quantity)");
-        
-                $stmt->bindParam(":iduser",$iduser);
-                $stmt->bindParam(":product",$product);
-                $stmt->bindParam(":quantity",$quantity);
-                $stmt->execute();
-
-                }catch (PDOException $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-        }
-
-    }
+    
 ?>
     <main>
         <div class="list">
@@ -67,7 +27,8 @@ session_start();
             <form action="evaluate.php" method="get">
             <div class="shoplist">
                 <?php
-                    
+                    include("common/dbconnection.php");
+                    $cart=explode(" ",$_COOKIE["cart"]);
                     
                     foreach($cart as $elem){
                         $item=explode(",",$elem);
@@ -101,7 +62,7 @@ session_start();
                         
                         }
                 ?>
-                <button type="submit">Conferma</button>
+                <button type="submit" onclick="deletecart()">Conferma</button>
             </form>
             </div>
         </div>

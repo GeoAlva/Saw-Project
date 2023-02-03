@@ -55,3 +55,9 @@ function removefromcart(id){
     carttocookie();
     window.location.reload();
 }
+
+function deletecart(){
+    let cart={};
+    document.cookie = "cart="
+    window.localStorage.removeItem("cart");
+}
