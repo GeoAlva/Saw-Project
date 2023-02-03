@@ -93,13 +93,11 @@ session_start();
                         echo        '<div class="quantity_div">';  
                         echo        '   <input type="text" id="'.$elem["name"].'" class="quantity" name="quantita" value="'.$quantity.'" readonly>';
                         echo        '</div>';
-                        echo        '<button type="submit" onclick="" class="cart_button cart_delete"><i class="fa-solid fa-xmark"></i></button>';
+                        echo        '<button type="submit" onclick="removefromcart(\''.$elem["name"].'\')" class="cart_button cart_delete"><i class="fa-solid fa-xmark"></i></button>';
                         echo    "</div>";
                     }
                     }
-
                     ?>
-
                     <button onclick="window.location.href='purchase.php'"><div>Complete purchase</div>
                 <?php echo"<div>tot: ".($totale/100)."€</div>"; 
                 ?>

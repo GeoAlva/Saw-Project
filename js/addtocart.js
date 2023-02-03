@@ -9,11 +9,14 @@ function addtocart(id) {
     var quantity = elem.value;
     var product = id.split("-");
     var intRegEx = /^[1-9][0-9]?$/;
-    if (!intRegEx.test(quantity))
+    if (!intRegEx.test(quantity)){
         alert("Enter a valid number of products");
+        return;
+    }
     else {
         alert("added to cart " + quantity + "x of product " + product[1]);
     }
+
 
     let cartItem = {
         title: id,
@@ -21,24 +24,22 @@ function addtocart(id) {
     }
     if (id in cart) {
         cart[id].qty = parseInt(cart[id].qty)  + parseInt(quantity) ;
-        console.log(cart[id].title+","+cart[id].qty);}
+    }
     else {
         cart[id] = cartItem;
     }
-    
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function carttocookie() {
     let cartcookie = '';
-    if (Object.keys(cart).length == 0)
-        return;
+    if (Object.keys(cart)==null){
+        return;   
+    }
     Object.keys(cart).forEach(function (key) {
         cartcookie = cartcookie + cart[key].title + ',' + cart[key].qty + ' ';
     });
     document.cookie = "cart=" + cartcookie;
-
-    console.log(cartcookie)
 }
 
 function purchase() {
@@ -46,4 +47,11 @@ function purchase() {
     localStorage.setItem("cart", JSON.stringify(cart))
     document.cookie = "cart="
     location.reload();
+}
+
+function removefromcart(id){
+        delete cart[id];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    carttocookie();
+    window.location.reload();
 }
