@@ -98,8 +98,8 @@ session_start();
                     }
                     }
                     ?>
-                    <button onclick="window.location.href='purchase.php'"><div>Complete purchase</div>
-                <?php echo"<div>tot: ".($totale/100)."€</div>"; 
+                    <button onclick="window.location.href='purchase.php'" class='confirmbutton'><div><h2>Complete purchase</h2></div><br><br>
+                <?php echo"<div><h3>tot: ".($totale/100)."€</h3></div>"; 
                 ?>
                 </button>
             </div>

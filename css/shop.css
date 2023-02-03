@@ -126,3 +126,12 @@ background-color: rgb(200, 0, 0);
     padding: 2.5rem;
     margin:2em auto 2em auto;
 }
+.confirmbutton{
+    background-color: rgb(255, 255, 255);
+    padding:10px;
+    margin: 10px;
+    max-width: 200px;
+    border-radius: 5px;
+    border-color: rgb(115, 255, 0);
+    border-width: 20px;
+}
