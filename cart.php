@@ -60,6 +60,34 @@ session_start();
                         echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
                         $product[1]=str_replace("_"," ",$product[1]);
                         echo        "<h5>".$product[1]."</h5>";
+                        
+                        try {
+                            $revstmt = $conn->prepare("SELECT * FROM reviews WHERE product LIKE :product");
+                            $revstmt->bindParam(":product",$elem["name"]);
+                            $revstmt->execute();
+                            $reviews= $revstmt->fetchAll();
+                        } catch (PDOException $e) {
+                            echo "Error: " . $e->getMessage();
+                        }
+                        $rating=0;
+                        if(count($reviews)!=0){
+                            $j=0;
+                            foreach($reviews as $review){
+                                $rating+=$review["rating"];
+                                $j++;
+                            }
+                            $rating/=$j;
+                        }
+                        echo    '<div class="rating">';
+                        for($z=1;$z<=$rating;$z++){
+                            echo '<span class="fa fa-star checked"></span>';
+                        }
+                        for($z=5;$z>$rating;$z--){
+                            echo '<span class="fa fa-star"></span>';
+                        }
+                        echo '</div>';
+                        echo        '<div>Rating:'.$rating.'</div>';
+
                         echo        "<div>".$elem["price"]."€</div> ";
                         echo        "<div>tot: ".($totsingolo/100)."€</div> ";
                         echo        '<div class="quantity_div">';  

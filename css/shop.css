@@ -29,6 +29,14 @@ main{
     max-height: 120px;
     justify-content: center;
 }
+.shop_elem .rating{
+    display: flex;
+    flex-direction: row;
+}
+
+.rating .checked {
+    color: orange;
+  }
 
 .shop_elem .cart_button{
     width: 100%;
