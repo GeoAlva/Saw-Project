@@ -64,6 +64,7 @@ session_start();
                     echo '<script>printerrorSignup("Unexpected Error, try again later");</script>';
             }
             $conn=null;
+            header("refresh:0; url= login.php");
 ?>
 </body>
 </html>

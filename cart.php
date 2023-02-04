@@ -48,7 +48,7 @@ session_start();
                             $stmt->execute();
                             $rows= $stmt->fetchAll();
                         } catch (PDOException $e) {
-                            echo "Error occurred during connection with database;";
+                            echo "Error occurred during connection with database";
                         }
                     
                     
@@ -67,7 +67,7 @@ session_start();
                             $revstmt->execute();
                             $reviews= $revstmt->fetchAll();
                         } catch (PDOException $e) {
-                            echo "Error occurred during connection with database;";
+                            echo "Error occurred during connection with database";
                         }
                         $rating=0;
                         if(count($reviews)!=0){
