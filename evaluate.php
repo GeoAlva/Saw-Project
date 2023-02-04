@@ -33,7 +33,7 @@ include("common/dbconnection.php");
                 $stmt->bindParam(":rating",$_GET[$product[0]]);
                 $stmt->execute();
             } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
+                echo "Error occurred during connection with database";
             }
                }              
     ?>
