@@ -126,24 +126,25 @@ ul {
 
   background-color: #1b51bf;
   color: white;
-  padding: 12px;
-  font-size: 16px;
+  padding: 14px 20px;
+  font-size: 17px;
   margin:0px;
   border: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  float: right;
-  position: relative;
+  float:right;
+  position:static;
 
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  float:left;
   display: none;
-  position: fixed;
+  position:absolute;
+  right:0;
+  top:2.85rem;
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -162,10 +163,10 @@ ul {
 .dropdown-content a:hover {background-color: #ddd;}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {display: block; float:left;z-index: 1;;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;} 
+.dropdown:hover .dropbtn {background-color: #1b2bbf;} 
 
 
   /*form*/
