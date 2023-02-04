@@ -62,7 +62,7 @@ session_start();
                         
                         }
                 ?>
-                <button type="submit" class="confirmbutton" onclick="deletecart()">Conferma</button>
+                <button type="submit" class="confirmbutton">Conferma</button>
             </form>
             </div>
         </div>

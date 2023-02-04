@@ -68,7 +68,6 @@ session_start();
                         for($z=5;$z>$rating;$z--){
                             echo '<span class="fa fa-star"></span>';
                         }
-                        echo        "<span>".$rating."</span>";
                         echo '</div>';
 
 
@@ -135,7 +134,6 @@ session_start();
                         for($z=5;$z>$rating;$z--){
                             echo '<span class="fa fa-star"></span>';
                         }
-                        echo        '<span>'.$rating.'</span>';
                         echo '</div>';
 
                         echo        "<div>".$elem["price"]."€</div> ";
@@ -201,7 +199,6 @@ session_start();
                         for($z=5;$z>$rating;$z--){
                             echo '<span class="fa fa-star"></span>';
                         }
-                        echo        '<span>'.$rating.'</span>';
                         echo '</div>';
 
                         echo        "<div>".$elem["price"]."€</div> ";
@@ -266,7 +263,6 @@ session_start();
                         for($z=5;$z>$rating;$z--){
                             echo '<span class="fa fa-star"></span>';
                         }
-                        echo        '<span>'.$rating.'</span>';
                         echo '</div>';
 
 

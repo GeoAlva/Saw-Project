@@ -8,6 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluation</title>
+    <script src="js/addtocart.js"></script> 
 </head>
 <body>
     <?php
@@ -34,8 +35,12 @@ include("common/dbconnection.php");
             } catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
-            header("refresh:0;url=confirm.php");
                }              
     ?>
+    <script>
+        deletecart();
+        window.location.replace("confirm.php")
+    </script>
+
 </body>
 </html>
