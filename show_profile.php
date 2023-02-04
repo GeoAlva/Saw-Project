@@ -15,7 +15,7 @@ session_start();
     <?php
     include "common/navbar.php";
     if(!isset($_SESSION["login"])){
-    header("location: index.php");
+        header("refresh:0;url=form_login.php");
     }
     ?>
 <form class="container" action="update_profile.php" method="post">
