@@ -2,7 +2,7 @@
 
 <div class="navbar">
         <ul>
-            <a href="main.php"><img src="images/carrefive.png" alt="carrefive logo"></a>
+            <a href="main.php"><img src="images/carrefive.PNG" alt="carrefive logo"></a>
             <li><a href="index.php">Home</a></li>
             <li><a href="workinprogress.php">Services</a></li>
             <li><a href="workinprogress.php">Contact Us</a></li>
