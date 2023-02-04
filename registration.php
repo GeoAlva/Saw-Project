@@ -8,22 +8,19 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
+    <script src="js/printerror.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/shop.css">
-    <title>Document</title>
+    <title>Registration</title>
 </head>
 <body>
-<main>
 <?php
 
-    if(!isset($_POST["submit"])){
-        echo "Please submit data from form";
-        exit();;
-    }   
-    if(empty($_POST["firstname"])||empty($_POST["lastname"])||empty($_POST["email"])||empty($_POST["pass"])||empty($_POST["confirm"])){
-        echo "Missing data, please insert";
-        exit();
-		};
+    if(!isset($_POST["submit"]))
+        echo '<script>printerrorSignup("Please submit data from form");</script>'; 
+
+    if(empty($_POST["firstname"])||empty($_POST["lastname"])||empty($_POST["email"])||empty($_POST["pass"])||empty($_POST["confirm"]))
+        echo '<script>printerrorSignup("Missing data, please insert");</script>';
 
         $firstname= htmlspecialchars(trim($_POST["firstname"])); 
         $lastname=htmlspecialchars(trim($_POST["lastname"]));
@@ -31,27 +28,20 @@ session_start();
         $password=htmlspecialchars(trim($_POST["pass"]));
         $confirm=htmlspecialchars(trim($_POST["confirm"]));
 
-        if(strlen($firstname)<3 || strlen($firstname)>30){
-            echo"firstname must be between 3 and 30 characters long";
-            exit();
-        }
-        if(strlen($lastname)<3 ||strlen($lastname)>30){
-            echo"lastname must be between 3 and 30 characters long";
-            exit();
-        }
-        if(strlen($email)>100){
-            echo"please enter a valid email";
-            exit();
-        }
-        if(strlen($password)<6 || strlen($confirm)<6 || strlen($password)>30 || strlen($confirm)>30){
-            echo"password must be between 6 and 30 characters long";
-            exit();
-        }
-        if(strcmp($password,$confirm)){
-            echo"Passwords do not match";
-            echo "<a href=\"form_signup.php\"> Go back</a><br>";
-            exit();
-        }
+        if(strlen($firstname)<3 || strlen($firstname)>30)
+            echo '<script>printerrorSignup("firstname must be between 3 and 30 characters long");</script>';
+
+        if(strlen($lastname)<3 ||strlen($lastname)>30)
+            echo '<script>printerrorSignup("lastname must be between 3 and 30 characters long");</script>';
+
+        if(strlen($email)>100)
+            echo '<script>printerrorSignup("please enter a valid email");</script>';
+
+        if(strlen($password)<6 || strlen($confirm)<6 || strlen($password)>30 || strlen($confirm)>30)
+            echo '<script>printerrorSignup("password must be between 6 and 30 characters long");</script>';
+
+        if(strcmp($password,$confirm))
+            echo '<script>printerrorSignup("Passwords do not match");</script>';
 
         $hash=password_hash($password,PASSWORD_DEFAULT);
 
@@ -68,18 +58,13 @@ session_start();
             echo "Welcome ".$firstname."!<br>";
             }catch(PDOException $e){
                 
-                if($e->getCode()==23000){
-                    echo "Error: email already used <br>";
-                }
+                if($e->getCode()==23000)
+                    echo '<script>printerrorSignup("Email already in use");</script>';
                 else
-                    echo "Error: try again later <br>";
-                echo $e->getMessage();
+                    echo '<script>printerrorSignup("Unexpected Error, try again later");</script>';
             }
             $conn=null;
 ?>
-
-    <a href="form_login.php">Go to login page</a>
-    <main>
 </body>
 </html>
 

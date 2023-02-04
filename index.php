@@ -20,9 +20,12 @@ session_start();
 
     <div class="container">
         <h3 align="center">Welcome!</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius assumenda, aliquid harum impedit repellendus
-            ut consequuntur adipisci soluta eligendi, porro autem minima eveniet dicta. Odit ipsum placeat laborum
-            delectus obcaecati.</p>
+        <p>Welcome to Carrefive, the new website of the new supermarket startup!
+            We are excited to offer a simpler and more efficient online shopping experience for our customers.
+            With our wide range of products and the convenience of home delivery, there's no need to leave your home to do your shopping.
+            We are dedicated to providing excellent service and ensuring that every purchase is a positive experience.
+            Visit our site and find out why we are the new go-to for online shopping!
+            </p>
         <br><div class="start">
         <a href="main.php"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
