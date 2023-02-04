@@ -3,12 +3,10 @@
 <div class="navbar">
         <ul>
             <a href="main.php"><img src="images/carrefive.png" alt="carrefive logo"></a>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Team</a></li>
-            <!-- <li><a href="#">Case history</a></li>
-            <li><a href="#">Work with us</a></li>
-            <li><a href="#">Contacts</a></li> -->
-            
+            <li><a href="index.php">Home</a></li>
+            <li><a href="workinprogress.php">Services</a></li>
+            <li><a href="workinprogress.php">Contact Us</a></li>
+ 
             <?php
             if(isset($_SESSION["login"])){
                 echo "<li class=\"signin\"><a href=logout.php> Log Out</a></li>";
