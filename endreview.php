@@ -10,7 +10,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/78ca362c23.js" crossorigin="anonymous"></script>
-    <script src="js/addtocart.js"></script> 
     <title>Purchase complete</title>
 </head>
 
@@ -20,14 +19,10 @@ session_start();
     ?>
 
     <div class="container">
-        <h3 align="center">Purchase Complete!</h3>
-        <p>Feel free to evaluate our products</p>
+        <h3 align="center">Thanks for reviewing our products!</h3>
+        <p>Go back to the main page</p>
         <div class="start">
-        <a href="purchase.php"><i class="fa-regular fa-star"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
-        </div>
-        <p>Or go back to the main page</p>
-        <div class="start">
-        <a href="main.php" onclick="deletecart()"><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="main.php" ><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 

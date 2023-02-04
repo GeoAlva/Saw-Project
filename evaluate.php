@@ -38,8 +38,8 @@ include("common/dbconnection.php");
                }              
     ?>
     <script>
-        deletecart();
-        window.location.replace("confirm.php")
+        deletecart()
+        window.location.replace("endreview.php")
     </script>
 
 </body>
