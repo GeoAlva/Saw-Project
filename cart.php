@@ -86,7 +86,6 @@ session_start();
                             echo '<span class="fa fa-star"></span>';
                         }
                         echo '</div>';
-                        echo        '<div>Rating:'.$rating.'</div>';
 
                         echo        "<div>".$elem["price"]."€</div> ";
                         echo        "<div>tot: ".($totsingolo/100)."€</div> ";

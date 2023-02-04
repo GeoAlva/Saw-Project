@@ -27,7 +27,7 @@ session_start();
         </div>
         <p>Or go back to the main page</p>
         <div class="start">
-        <a href="main.php" onclick="deletecart()"><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="noeval.php"><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 
