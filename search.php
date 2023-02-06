@@ -49,7 +49,7 @@ session_start();
                     foreach($rows as $elem){
                         echo    "<div class='shop_elem'>";
                         $product = explode("-",$elem["name"]);
-                        echo        "<img src='images/".$product[0]."/".$product[1].".png'>";
+                        echo        "<img src='images/".$product[0]."/".$product[1].".png' alt=".$product[1].">";
                         $product[1]=str_replace("_"," ",$product[1]);
                         echo        "<h5>".$product[1]."</h5>";
 
