@@ -259,7 +259,7 @@ input:focus ~ .floating-label,
 }
 
 
-.container:hover .start{
+.container .start:hover{
   background-color: #1b2bbf;
 }
 
