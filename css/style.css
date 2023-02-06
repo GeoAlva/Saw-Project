@@ -98,6 +98,11 @@ li a {
     text-decoration: none;
   }
 
+  .noline:hover{
+    text-decoration: none;
+  }
+
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -163,7 +168,7 @@ ul {
 .dropdown-content a:hover {background-color: #ddd;}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block; float:left;z-index: 1;;}
+.dropdown:hover .dropdown-content {display: block; float:left;z-index: 1;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #1b2bbf;} 
@@ -254,6 +259,10 @@ input:focus ~ .floating-label,
 }
 
 
+.container:hover .start{
+  background-color: #1b2bbf;
+}
+
 footer{
   background-color: #1b2bbf;
   color: #ccc;
@@ -268,7 +277,7 @@ footer hr{
   color: #ccc;
 }
 
-h3{
+h3, h4{
   color: white;
 }
 

@@ -22,7 +22,7 @@ session_start();
         <h3 align="center">Thanks for reviewing our products!</h3>
         <p>Go back to the main page</p>
         <div class="start">
-        <a href="main.php" ><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="main.php" class="noline"><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 

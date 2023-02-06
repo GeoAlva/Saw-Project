@@ -27,7 +27,7 @@ session_start();
             Visit our site and find out why we are the new go-to for online shopping!
             </p>
         <br><div class="start">
-        <a href="main.php" ><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="main.php" class="noline" ><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 

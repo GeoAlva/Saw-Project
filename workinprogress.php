@@ -23,7 +23,7 @@ session_start();
         <p>We are working hard to offer all services but unfortunately this page is yet to be implemented.</p>
         <br>
         <div class="start">
-        <a href="main.php"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="main.php" class="noline"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 

@@ -23,11 +23,11 @@ session_start();
         <h3 align="center">Purchase Complete!</h3>
         <p>Feel free to evaluate our products</p>
         <div class="start">
-        <a href="purchase.php"><i class="fa-regular fa-star"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="purchase.php" class="noline"><i class="fa-regular fa-star"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
         <p>Or go back to the main page</p>
         <div class="start">
-        <a href="noeval.php"><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+        <a href="noeval.php" class="noline"><i class="fa-solid fa-cart-shopping"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 

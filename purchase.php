@@ -23,7 +23,7 @@ session_start();
 ?>
     <main>
         <div class="list">
-            <h3>Purchase complete, feel free to <a href="evaluate.php">evaluate</a> our products :)</h3>
+            <h3>Purchase complete, feel free to evaluate our products :)</h3>
             <form action="evaluate.php" method="get">
             <div class="shoplist">
                 <?php
