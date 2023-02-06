@@ -2,12 +2,20 @@ main{
     color:#000000;
 }
 
+.list h3{
+    color: white;
+}
+
 .shoplist{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin:1vw;
     max-width: 100%;
+}
+
+.shoplist h3{
+    color:black;
 }
 
 .shop_elem{
