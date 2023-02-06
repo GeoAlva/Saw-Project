@@ -11,10 +11,10 @@ require 'utils.php';
 /****************************************/
 
 // local URL
-$baseurl =  'http://localhost/saw/Saw-Project/';
+//$baseurl =  'http://localhost/saw/Saw-Project/';
 
 // remote URL
-// $baseurl =  'https://saw21.dibris.unige.it/~S1234567/...';
+$baseurl =  'https://saw21.dibris.unige.it/~S4523400';
 
 
 echo "[+] Testing Registration - Login - Show Profile\n";
