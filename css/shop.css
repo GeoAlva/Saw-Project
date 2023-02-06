@@ -6,6 +6,10 @@ main{
     color: white;
 }
 
+.list h4{
+    color: white;
+}
+
 .shoplist{
     display: flex;
     flex-direction: row;
