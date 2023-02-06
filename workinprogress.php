@@ -19,7 +19,7 @@ session_start();
     ?>
 
     <div class="container">
-        <h3 align="center">Page not found :(</h3>
+        <h3 align="center">Work in progress...</h3>
         <p>We are working hard to offer all services but unfortunately this page is yet to be implemented.</p>
         <br>
         <div class="start">
